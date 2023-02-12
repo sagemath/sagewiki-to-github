@@ -25,3 +25,21 @@ I believe the original authors are Josh Triplett and Antoine Beaupré.
 
 The rest of everything in this repository is licensed under the MIT license (see `MIT_LICENSE`).
 
+## Converting the Sage wiki to markdown:
+
+This needs python2; pyenv makes it easy to install it.
+
+    pyenv install 2.7
+    eval "$(pyenv init -)"
+    python -m pip install -r requirements.txt
+
+Symlink the wiki configuration and data (unpacked from an archive):
+
+    ln -s SOMEWHERE/wiki wiki
+    ln -s wiki/data data
+
+Start the conversion:
+
+    ./convert.py
+
+This creates a bare repo ``test.git`` and a clone ``test``.
